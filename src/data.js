@@ -12,11 +12,11 @@ export const profile = {
 }
 
 export const navLinks = [
-  { id: 'home', label: 'მთავარი', href: '#home' },
-  { id: 'about', label: 'ჩემ შესახებ', href: '#about' },
-  { id: 'projects', label: 'პროექტები', href: '#projects' },
-  { id: 'skills', label: 'უნარები', href: '#skills' },
-  { id: 'contact', label: 'კონტაქტი', href: '#contact' },
+  { id: 'home', label: 'მთავარი', to: '/', end: true },
+  { id: 'about', label: 'ჩემ შესახებ', to: '/about' },
+  { id: 'users', label: 'თანამშრომლები', to: '/users' },
+  { id: 'projects', label: 'პროექტები', to: '/#projects' },
+  { id: 'contact', label: 'კონტაქტი', to: '/#contact' },
 ]
 
 export const stack = ['HTML5', 'CSS3', 'Tailwind CSS', 'React', 'JavaScript']

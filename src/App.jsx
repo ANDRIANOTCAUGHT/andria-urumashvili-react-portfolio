@@ -1,23 +1,23 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import Layout from './components/Layout'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import UsersPage from './pages/UsersPage'
+import NotFoundPage from './pages/NotFoundPage'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: 'about', element: <AboutPage /> },
+      { path: 'users', element: <UsersPage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
+])
 
 export default function App() {
-  return (
-    <div className="min-h-screen bg-background text-on-surface antialiased">
-      <Header />
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  )
+  return <RouterProvider router={router} />
 }

@@ -1,38 +1,32 @@
 # ანდრია ურუმაშვილი — React Portfolio
 
-პორტფოლიოს საიტი **React**-ით. მთავარი გვერდი დაყოფილია კომპონენტებად; გამეორებადი UI ელემენტები (ბარათები, ღილაკები, თეგები) არის reusable კომპონენტები.
+პორტფოლიო React-ით, **react-router** როუტინგით. მთავარი გვერდი დაყოფილია კომპონენტებად; გამეორებადი ელემენტები — reusable კომპონენტებია.
 
 ## სტეკი
 
 - React 19 + Vite
+- react-router 7 (`createBrowserRouter`)
 - Tailwind CSS v4
-- JavaScript (JSX)
+
+## გვერდები (routes)
+
+| მისამართი | გვერდი | აღწერა |
+|---|---|---|
+| `/` | `HomePage` | Hero, პროექტები, უნარები, კონტაქტი |
+| `/about` | `AboutPage` | ბიო, პრინციპები, უნარები |
+| `/users` | `UsersPage` | JSONPlaceholder API + ძებნა |
+| `*` | `NotFoundPage` | 404 |
+
+## API
+
+`GET https://jsonplaceholder.typicode.com/users` — თანამშრომლების სია.  
+`UsersPage`-ზე მუშაობს ძებნა სახელით, username-ით, ელფოსტით, კომპანიითა და ქალაქით; ასევე loading / error / empty მდგომარეობები და retry.
 
 ## კომპონენტები
 
-### გვერდის სექციები
-| კომპონენტი | დანიშნულება |
-|---|---|
-| `Header` | ნავიგაცია + burger მენიუ (useState) |
-| `Hero` | მთავარი ჰირო |
-| `About` | ჩემ შესახებ |
-| `Projects` | პროექტების სია |
-| `Skills` | უნარები + სწავლა |
-| `Contact` | კონტაქტი |
-| `Footer` | ფუტერი |
+**გვერდის:** `Layout` (Header + Outlet + Footer), `Header` (burger მენიუ), `Hero`, `About`, `Projects`, `Skills`, `Contact`, `Footer`
 
-### გამეორებადი (reusable)
-| კომპონენტი | დანიშნულება |
-|---|---|
-| `ProjectCard` | პროექტის ბარათი (`projects.map`) |
-| `SkillCard` | უნარის ბარათი |
-| `LearningCard` | სწავლის ბარათი |
-| `InfoCard` | პრინციპის ბარათი |
-| `Button` | ღილაკი / ლინკი |
-| `Badge` | სტატუსის ბეიჯი |
-| `Tag` | ტეგი |
-| `SectionHeading` | სექციის სათაური |
-| `Icon` | Material Symbol |
+**Reusable:** `ProjectCard`, `SkillCard`, `LearningCard`, `InfoCard`, `UserCard`, `Button`, `Badge`, `Tag`, `SectionHeading`, `Icon`
 
 მონაცემები: `src/data.js`
 
@@ -43,8 +37,11 @@ npm install
 npm run dev
 ```
 
+http://localhost:5173/
+
 ```bash
 npm run build
+npm run preview
 ```
 
 ## კონტაქტი
